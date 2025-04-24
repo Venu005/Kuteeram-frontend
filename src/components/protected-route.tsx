@@ -1,7 +1,8 @@
 import { Navigate, useLocation } from "react-router-dom";
 import { useAuth } from "../contexts/auth";
+import React from "react";
 
-export function ProtectedRoute({ children }: { children: JSX.Element }) {
+export function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { user } = useAuth();
   const location = useLocation();
 
@@ -12,7 +13,7 @@ export function ProtectedRoute({ children }: { children: JSX.Element }) {
   return children;
 }
 
-export function AdminRoute({ children }: { children: JSX.Element }) {
+export function AdminRoute({ children }: { children: React.ReactNode }) {
   const { user } = useAuth();
   const location = useLocation();
 
